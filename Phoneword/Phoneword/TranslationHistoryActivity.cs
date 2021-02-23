@@ -20,8 +20,7 @@ namespace Phoneword
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            var listNumbers = Intent.Extras.GetStringArrayList("phone_numbers") ?? new string[0];
-            phoneNumbers = listNumbers;
+            phoneNumbers = Intent.Extras.GetStringArrayList("phone_numbers") ?? new string[0];
             this.ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, phoneNumbers);
         }
 

@@ -15,10 +15,25 @@ namespace Phoneword
     public class MainActivity : AppCompatActivity
     {
         static readonly List<string> phoneNumbers = new List<string>();
+        const string ACTIVITY_STATE = "ACTIVITY STATE";
+
+        const string ON_CREATE = "OnCreate is called";
+        const string ON_START = "OnStart is called";
+        const string ON_RESUME = "OnResume is called";
+
+        const string ON_PAUSE = "OnPause is called";
+        const string ON_STOP = "OnStop is called";
+        const string ON_DESTROY = "OnDestroy is called";
+
+        const string ON_RESTART = "OnRestart is called";
+
+        const string ASSET_FILENAME = "read_assets.txt";
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            Log.Debug(ACTIVITY_STATE, ON_CREATE);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
@@ -50,12 +65,12 @@ namespace Phoneword
                     translateHistoryButton.Enabled = true;
                 }
 
-                //Read the c ontent of assets
+                //Read the content of assets
                 string content;
                 AssetManager assets = this.Assets;
                 try
                 {
-                    using (StreamReader sr = new StreamReader(assets.Open("read_assets.txt")))
+                    using (StreamReader sr = new StreamReader(assets.Open(ASSET_FILENAME)))
                     {
                         content = sr.ReadToEnd();
                     }
@@ -65,8 +80,8 @@ namespace Phoneword
                 {
                     throw exception;
                 }
-              
-                Log.Debug("ASSET_CONENT", content);
+
+                Log.Debug("ASSET_CONTENT", content);
 
             };
 
@@ -89,6 +104,43 @@ namespace Phoneword
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            Log.Debug(ACTIVITY_STATE, ON_START);
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            Log.Debug(ACTIVITY_STATE, ON_RESUME);
+        }
+
+        protected override void OnPause()
+        {
+            Log.Debug(ACTIVITY_STATE, ON_PAUSE);
+            base.OnPause();
+        }
+
+        protected override void OnStop()
+        {
+            Log.Debug(ACTIVITY_STATE, ON_STOP);
+            base.OnStop();
+        }
+
+        protected override void OnDestroy()
+        {
+            Log.Debug(ACTIVITY_STATE, ON_DESTROY);
+            base.OnDestroy();
+        }
+
+        protected override void OnRestart()
+        {
+            base.OnRestart();
+            Log.Debug(ACTIVITY_STATE, ON_RESTART);
+
         }
     }
 }
