@@ -3,6 +3,28 @@ Practice code for Xamarin Android.
 # Phoneword
 An application that translates an alphanumeric phone number into a numeric phone number
 
+**Objectives:**
+- Get started in Xamarin.Android development
+- Project structure
+- Basic concepts such as Event handling and Activity Lifecycle
+
+**Recap:**
+1. Create Xamarin.Android project
+2. Implement the UI
+3. Handle event when click button and type in the Edittext
+4. Add log statement to see the Activity state when configuration changes occur
+
+**Reerences:**
+- [Setup and Installation](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/)
+- [How to build the app](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/hello-android-quickstart?pivots=windows)
+- [Project structure explaination](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/hello-android-deepdive?pivots=windows)
+- [How to read Assets](https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/resources-in-android/android-assets?tabs=windows)
+- [C# Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates)
+- [C# Delegates Examples](https://www.tutorialspoint.com/csharp/csharp_delegates.htm)
+- [Activity Lifecycle](https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/activity-lifecycle)
+- [Add more screens to your app](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android-multiscreen/)
+- [See more about the current code](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive)
+
 # TipCalc
 An application that convert the subtotal to the tip leave
 
@@ -31,13 +53,10 @@ An application that convert the subtotal to the tip leave
 	- Create `Resources/layout/TipView.xml`, design the UI
 3. Run
 
-# References
-- [Setup and Installation](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/)
-- [How to build the app](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/hello-android-quickstart?pivots=windows)
-- [Project structure explaination](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/hello-android-deepdive?pivots=windows)
-- [How to read Assets](https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/resources-in-android/android-assets?tabs=windows)
-- [C# Delegates](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates)
-- [C# Delegates Examples](https://www.tutorialspoint.com/csharp/csharp_delegates.htm)
-- [Activity Lifecycle](https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/activity-lifecycle)
-- [Add more screens to your app](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android-multiscreen/)
-- [See more about the current code](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive)
+**References**
+- [YouTube Tutorial](https://www.youtube.com/watch?v=qGup08cz7LM&list=PLUGZRUcMsHDSa8j2JcJECq7OuRj6vafRe&index=2)
+- [Document Tutorial with in 5.6.3 version](https://github.com/MvvmCross/MvvmCross/tree/5.6.3/docs/_documentation/tipcalc-tutorial)
+- [Dependency Injection](https://www.tutorialsteacher.com/ioc/dependency-injection)
+- [Inversion of Control](https://www.tutorialsteacher.com/ioc/inversion-of-control)
+
+
