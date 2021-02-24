@@ -14,7 +14,7 @@ An application that translates an alphanumeric phone number into a numeric phone
 3. Handle event when click button and type in the Edittext
 4. Add log statement to see the Activity state when configuration changes occur
 
-**Reerences:**
+**References:**
 - [Setup and Installation](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/)
 - [How to build the app](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/hello-android-quickstart?pivots=windows)
 - [Project structure explaination](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/hello-android-deepdive?pivots=windows)
