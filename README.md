@@ -59,4 +59,31 @@ An application that convert the subtotal to the tip leave
 - [Dependency Injection](https://www.tutorialsteacher.com/ioc/dependency-injection)
 - [Inversion of Control](https://www.tutorialsteacher.com/ioc/inversion-of-control)
 
+# About MvvmCross
+
+**What?**
+A frramge work enables developers to create cross platform apps (Xamarin.Android, WPF).
+**Why?**
+- MVVM architecture pattern
+- Navigation system
+- Data Binding
+- Platform specifics support
+- Inversion of Control container and Dependency Injection engine
+- Lots of plugins for common functionalities
+- Unit test helpers
+
+**Ingredients**
+- The **Core**: contains ViewModel, Services, Models and business code
+- The **UI**: contains the Views, platform specific code for intergrating with the **Core** apove
+
+**How it works? When an MvvmCross app starts:**
+1. Start up process fires
+2. `Setup` is created
+3. `Setup` initializes the framework:
+	- `InitializePrimary`: runs on the main thread. Initializes IoC, Logging, other core part
+	- `InitializeSecondary`: runs on the background. Constructs platform services like bindings, `App` class init. Registers Views/ViewModels lookups
+4. 
+5. 
+
+
 
