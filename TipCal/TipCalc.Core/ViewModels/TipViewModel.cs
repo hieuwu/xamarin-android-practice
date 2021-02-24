@@ -40,7 +40,6 @@ namespace TipCalc.Core.ViewModels
             }
         }
 
-
         private int _generosity;
         public int Generosity
         {
@@ -54,7 +53,6 @@ namespace TipCalc.Core.ViewModels
             }
         }
 
-
         private double _tip;
         public double Tip
         {
@@ -65,9 +63,6 @@ namespace TipCalc.Core.ViewModels
                 RaisePropertyChanged(() => Tip);
             }
         }
-
-
-
 
         private void Recalculate()
         {
