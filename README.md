@@ -49,7 +49,7 @@ An application that convert the subtotal to the tip leave
 	- Implement constructor with Context parameter and the base funtion
 	- Override the `CreateApp()`, `return new App()`
 	- Create `Views/TipView.` **Note:** Name of the view class must match the name of view model ex: TipViewModel - TipView
-	- Override the `OnViewModelSet()`, `SetContentview(Resource.Layout.TipView)
+	- Override the `OnViewModelSet()`, `SetContentview(Resource.Layout.TipView`)
 	- Create `Resources/layout/TipView.xml`, design the UI
 3. Run
 
