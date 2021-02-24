@@ -62,7 +62,7 @@ An application that convert the subtotal to the tip leave
 # About MvvmCross
 
 **What?**
-A frramge work enables developers to create cross platform apps (Xamarin.Android, WPF).
+A framework enables developers to create cross platform apps (Xamarin.Android, WPF).
 **Why?**
 - MVVM architecture pattern
 - Navigation system
@@ -76,14 +76,23 @@ A frramge work enables developers to create cross platform apps (Xamarin.Android
 - The **Core**: contains ViewModel, Services, Models and business code
 - The **UI**: contains the Views, platform specific code for intergrating with the **Core** apove
 
+**Deep dive project structure**
+- **The "Core include":  **
+	- An application object called `App.cs`
+	- A custom `AppStart` object manages first navigation
+	- ViewModels, decide the business logic inherit from `MvxViewModel`. Contain:
+		- C# properties with raise changes
+		- Commands
+		- Private methods
+	- Services, Models, Repositories,...
+- ****
+
 **How it works? When an MvvmCross app starts:**
 1. Start up process fires
 2. `Setup` is created
 3. `Setup` initializes the framework:
 	- `InitializePrimary`: runs on the main thread. Initializes IoC, Logging, other core part
 	- `InitializeSecondary`: runs on the background. Constructs platform services like bindings, `App` class init. Registers Views/ViewModels lookups
-4. 
-5. 
-
-
+4. When `App.Initialize` is called, the app will provide the `AppStart` object, responsible for the first navigation. The last step of `Setup` is calling `AppStart.Startup(object hint)`
+5. `AppStart.Startup(object hint)` runs the first ViewModel/View
 
