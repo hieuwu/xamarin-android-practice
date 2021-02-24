@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">TipCalc.UI.Droid</string>
+	<string name="action_settings">Settings</string>
+	<string name="subtotal">SubTotal</string>
+	<string name="generosity">Generosity</string>
+	<string name="progress_generosity">Progress Generosity</string>
+	<string name="tip_to_leave">Tip to leave</string>
+</resources>
