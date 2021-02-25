@@ -77,7 +77,7 @@ A framework enables developers to create cross platform apps (Xamarin.Android, W
 - The **UI**: contains the Views, platform specific code for intergrating with the **Core** apove
 
 **Deep dive project structure**
-- **The "Core include":  **
+- **The "Core" include:  **
 	- An application object called `App.cs`
 	- A custom `AppStart` object manages first navigation
 	- ViewModels, decide the business logic inherit from `MvxViewModel`. Contain:
@@ -85,7 +85,27 @@ A framework enables developers to create cross platform apps (Xamarin.Android, W
 		- Commands
 		- Private methods
 	- Services, Models, Repositories,...
-- ****
+- **Platform projects:**
+	- Native platform initialization code
+	- `Setup.cs` class (optional)
+	- `Views`: for presenting `ViewModels`
+	- `ViewPresenters`: decides how `Views` show
+	- Custom SDK code (controls, gestures, services,...)
+
+- **Declare initialization with `Application` class in Android**
+
+```java
+namespace MyAwesomeApp.Droid
+{
+    [Application]
+    public class MainApplication : MvxAndroidApplication<MvxAndroidSetup<App>, App>
+    {
+        public MainApplication(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
+        {
+        }
+    }
+}
+```
 
 **How it works? When an MvvmCross app starts:**
 1. Start up process fires
@@ -96,3 +116,28 @@ A framework enables developers to create cross platform apps (Xamarin.Android, W
 4. When `App.Initialize` is called, the app will provide the `AppStart` object, responsible for the first navigation. The last step of `Setup` is calling `AppStart.Startup(object hint)`
 5. `AppStart.Startup(object hint)` runs the first ViewModel/View
 
+**Binding Modes:**
+
+- **One-Way:** (Default)
+	- Data goes from `ViewModel` to the `View`
+	- The `View` will update automatically when data in `ViewModel` changes
+	- *Use case:* to show data which is arriving from a dynamic source (sensor or network)
+
+- **One-Way-To-Source:** (Rarely used)
+	- Data goes from `View` to `ViewModel` (Opposite of the **One-Way**)
+	- The `ViewModel` will update when data in the `View` changes
+	- *Use case*: to collect new data from user, ex: User fill in a form
+- **Two-Way:** (Commonly used)
+	- Data is transfered in both directions
+	- If `View` or `ViewModel` changes, the rest will update
+	- *Use case:* edit a existing data, ex: Edit an existing form
+- **One-Time:** (Not very commonly use)
+	- Data goes from `ViewModel` to `View`
+	- `View` does not monitor any change from `ViewModel`
+	- Data on the `View` is set once when the binding source is set, only changes when the binding source is reset
+	- `Use case`: for fields which can be changes but do not need to update after the first time set
+	- Ex: use this mode when set static text from language
+
+```diff
++ text in green
+```
