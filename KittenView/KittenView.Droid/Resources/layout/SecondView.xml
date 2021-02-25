@@ -3,18 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@android:color/holo_blue_bright"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Go to second"
-        local:MvxBind="Click ItemClickedCommand"/>
-    <Mvx.MvxListView
+        local:MvxBind="Text Name"/>
+       <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        local:MvxBind="ItemsSource Kittens;ItemClick MemoryClickedCommand"
-        local:MvxItemTemplate="@layout/item_kitten"
-        />
+        android:layout_height="wrap_content"
+        local:MvxBind="Text Price"/>
 </LinearLayout>

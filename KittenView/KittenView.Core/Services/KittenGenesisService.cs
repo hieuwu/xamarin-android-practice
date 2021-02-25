@@ -21,7 +21,7 @@ namespace KittenView.Core.Services
         }
 
         private int RandomPrice()  
-        {
+        {   
             return 1;
         }
 

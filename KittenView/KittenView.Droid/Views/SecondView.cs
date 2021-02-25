@@ -12,13 +12,14 @@ using System.Text;
 
 namespace KittenView.Droid.Views
 {
-    [Activity(Label = "First")]
-    public class FirstView : MvxActivity
+    [Activity(Label = "SecondView")]
+    public class SecondView : MvxActivity
     {
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(bundle);
-            SetContentView(Resource.Layout.FirstView);
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.SecondView);
+            // Create your application here
         }
     }
 }

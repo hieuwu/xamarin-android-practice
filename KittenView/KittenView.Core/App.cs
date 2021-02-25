@@ -9,7 +9,7 @@ namespace KittenView.Core
     {
         public override void Initialize()
         {
-            Mvx.RegisterType<IKittenGenesisService, KittenGenesisService>();
+            Mvx.ConstructAndRegisterSingleton<IKittenGenesisService, KittenGenesisService>();
             RegisterNavigationServiceAppStart<ViewModels.FirstViewModel>();
         }
     }
