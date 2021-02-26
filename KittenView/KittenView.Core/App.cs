@@ -1,7 +1,7 @@
 ﻿using KittenView.Core.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
-
+using MvvmCross.Platform.IoC;
 
 namespace KittenView.Core
 {
@@ -9,7 +9,10 @@ namespace KittenView.Core
     {
         public override void Initialize()
         {
-            Mvx.ConstructAndRegisterSingleton<IKittenGenesisService, KittenGenesisService>();
+            CreatableTypes()
+                        .EndingWith("Service")
+                        .AsInterfaces()
+                        .RegisterAsLazySingleton();
             RegisterNavigationServiceAppStart<ViewModels.FirstViewModel>();
         }
     }

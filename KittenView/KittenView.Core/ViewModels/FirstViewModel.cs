@@ -13,6 +13,7 @@ namespace KittenView.Core.ViewModels
     {
         readonly IKittenGenesisService _kittenGenesisService;
         private readonly IMvxNavigationService _navigationService;
+        private readonly IDataService _dataService;
 
         private string _convertString;
         public string ConvertString
@@ -35,10 +36,11 @@ namespace KittenView.Core.ViewModels
                 RaisePropertyChanged(() => Kittens);
             }
         }
-        public FirstViewModel(IKittenGenesisService kittenGenesisService, IMvxNavigationService navigationService)
+        public FirstViewModel(IKittenGenesisService kittenGenesisService, IMvxNavigationService navigationService, IDataService dataService)
         {
             _kittenGenesisService = kittenGenesisService;
             _navigationService = navigationService;
+            _dataService = dataService;
         }
 
         public override async Task Initialize()
@@ -55,6 +57,8 @@ namespace KittenView.Core.ViewModels
 
         public async Task SomeMethod()
         {
+            _dataService.AddKitten(new Kitten { Name = "Hieu vu", Price = 12, ImageUrl = "123" });
+            //_dataService.GetKittenList();
             await _navigationService.Navigate<SecondViewModel, Kitten>(new Kitten { Name="Hieu vu", Price=12, ImageUrl="123"});
         }
 
