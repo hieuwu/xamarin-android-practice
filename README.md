@@ -141,7 +141,7 @@ namespace MyAwesomeApp.Droid
 
 # Advance Techniques:
 
-**Call a function of father ViewModel in child ViewModel:**
+**Call a function of father ViewModel in a child ViewModel:**
 
 1. Create a command then attach it with a function to make change in the UI
 2. Pass the command above throught navigation (`MvxAsyncCommand`) until the child ViewModel can execute it
