@@ -139,7 +139,7 @@ namespace MyAwesomeApp.Droid
 	- Ex: use this mode when set static text from language
 
 
-# Advance Techniques:
+# Advanced Techniques:
 
 **Call a function of father ViewModel in a child ViewModel:**
 
