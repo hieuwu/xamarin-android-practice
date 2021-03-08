@@ -138,6 +138,12 @@ namespace MyAwesomeApp.Droid
 	- `Use case`: for fields which can be changes but do not need to update after the first time set
 	- Ex: use this mode when set static text from language
 
-```diff
-+ text in green
-```
+
+# Advance Techniques:
+
+**Call a function of father ViewModel in child ViewModel:**
+
+1. Create a command then attach it with a function to make change in the UI
+2. Pass the command above throught navigation (`MvxAsyncCommand`) until the child ViewModel can execute it
+3. In the child ViewModel, create a `ChildCommand` to get the command from the father ViewModel
+4. Depend on your logic, call `MvxAsyncCommand.Execute(parameters)` to trigger the function call
