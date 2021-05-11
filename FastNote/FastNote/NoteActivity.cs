@@ -31,11 +31,10 @@ namespace FastNote
             d(this.Bind(ViewModel, vm => vm.Text, v => v.NoteEditText.Text,
                 data => data,
                 data => data.Trim()));
-            d(this.WhenAnyObservable(v => v.ViewModel.AddNoteCommand).Subscribe(_ =>
-            {
-                _noteItemAdapter.NotifyDataSetChanged();
-            }));
+            d(this.WhenAnyObservable(v => v.ViewModel.AddNoteCommand,
+                v2 => v2.ViewModel.ResetNoteListCommand).Subscribe(_ => { _noteItemAdapter.NotifyDataSetChanged(); }));
         }
+
         private void SetUpRecyclerView()
         {
             NotesRecyclerView.SetLayoutManager(new LinearLayoutManager(this));
