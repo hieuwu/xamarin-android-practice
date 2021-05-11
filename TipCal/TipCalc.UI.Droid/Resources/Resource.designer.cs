@@ -3240,10 +3240,13 @@ namespace TipCalc.UI.Droid
 			public const int notify_panel_notification_icon_bg = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int tooltip_frame_dark = 2131165300;
+			public const int right_arrow = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int tooltip_frame_light = 2131165301;
+			public const int tooltip_frame_dark = 2131165301;
+			
+			// aapt resource value: 0x7F070076
+			public const int tooltip_frame_light = 2131165302;
 			
 			static Drawable()
 			{
@@ -4302,19 +4305,16 @@ namespace TipCalc.UI.Droid
 			public const int path_password_strike_through = 2131558454;
 			
 			// aapt resource value: 0x7F0D0037
-			public const int progress_generosity = 2131558455;
+			public const int search_menu_title = 2131558455;
 			
 			// aapt resource value: 0x7F0D0038
-			public const int search_menu_title = 2131558456;
+			public const int status_bar_notification_info_overflow = 2131558456;
 			
 			// aapt resource value: 0x7F0D0039
-			public const int status_bar_notification_info_overflow = 2131558457;
+			public const int subtotal = 2131558457;
 			
 			// aapt resource value: 0x7F0D003A
-			public const int subtotal = 2131558458;
-			
-			// aapt resource value: 0x7F0D003B
-			public const int tip_to_leave = 2131558459;
+			public const int tip_to_leave = 2131558458;
 			
 			static String()
 			{
