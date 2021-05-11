@@ -13,7 +13,6 @@ namespace FastNote.Adapter
         {
             _notes = notes;
         }
-
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             var vh = holder as NoteItemViewHolder;

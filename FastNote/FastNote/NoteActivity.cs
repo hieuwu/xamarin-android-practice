@@ -34,7 +34,6 @@ namespace FastNote
             d(this.WhenAnyObservable(v => v.ViewModel.AddNoteCommand).Subscribe(_ =>
             {
                 _noteItemAdapter.NotifyDataSetChanged();
-                Console.WriteLine("[Item Num:] " + ViewModel.Notes.Count);
             }));
         }
         private void SetUpRecyclerView()
@@ -42,7 +41,6 @@ namespace FastNote
             NotesRecyclerView.SetLayoutManager(new LinearLayoutManager(this));
             _noteItemAdapter = new NoteItemAdapter(ViewModel.Notes);
             NotesRecyclerView.SetAdapter(_noteItemAdapter);
-            _noteItemAdapter.NotifyDataSetChanged();
         }
 
         public EditText NoteEditText { get; set; }
